@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gustavo Pereira | Análise de dados com Python</title>
+  <meta name="description" content="Gustavo Pereira, estudante de Ciência da Computação em São Paulo. Análise de dados com Python, com backend em Java e cloud como segunda área.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#F8F9FB">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Gustavo Pereira | Análise de dados com Python">
+  <meta property="og:description" content="Estudante de Ciência da Computação. Análise de dados com Python, backend em Java e cloud como segunda área.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232447D6'/%3E%3Cpath d='M6 22l6-7 5 4 9-11' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="#inicio" aria-label="Gustavo Pereira, início">Gustavo Pereira</a>
+      <nav aria-label="Principal">
+        <ul class="nav">
+          <!-- Próximas seções a entrar aqui: Stack, Estudos, Contato -->
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="https://github.com/Pereira-gu" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/guspereira-dev/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero wrap" id="inicio" aria-labelledby="titulo">
+      <div class="hero__text">
+        <p class="place">São Paulo, SP</p>
+        <h1 id="titulo">Gustavo Pereira</h1>
+        <p class="lead">Estudo Ciência da Computação e trabalho com análise de dados em Python. Também construo APIs em Java e estudo cloud.</p>
+        <p class="goal">Procuro oportunidades em dados e desenvolvimento.</p>
+
+        <div class="actions">
+          <a class="btn btn--primary" href="#projetos">Ver projetos</a>
+          <a class="btn" href="mailto:dev.gustavospereira@gmail.com">Falar comigo</a>
+        </div>
+      </div>
+
+      <figure class="cell">
+        <div class="cell__code">
+          <span class="cell__prompt" aria-hidden="true">[1]:</span>
+          <code>df.groupby("semana")["pedidos"].sum().plot()</code>
+        </div>
+        <svg class="chart" viewBox="0 0 480 232" role="img" aria-labelledby="chart-t chart-d">
+          <title id="chart-t">Gráfico de linha ilustrativo</title>
+          <desc id="chart-d">Pedidos por semana ao longo de 12 semanas, com tendência de alta e uma queda leve nas semanas 3, 5, 8 e 11. Os valores são fictícios.</desc>
+
+          <g class="chart__grid" aria-hidden="true">
+            <line x1="56" y1="24"  x2="456" y2="24"/>
+            <line x1="56" y1="67"  x2="456" y2="67"/>
+            <line x1="56" y1="110" x2="456" y2="110"/>
+            <line x1="56" y1="153" x2="456" y2="153"/>
+          </g>
+          <line class="chart__axis" x1="56" y1="196" x2="456" y2="196" aria-hidden="true"/>
+
+          <g class="chart__labels" aria-hidden="true">
+            <text x="44" y="28"  text-anchor="end">100</text>
+            <text x="44" y="71"  text-anchor="end">75</text>
+            <text x="44" y="114" text-anchor="end">50</text>
+            <text x="44" y="157" text-anchor="end">25</text>
+            <text x="44" y="200" text-anchor="end">0</text>
+            <text x="56"  y="218" text-anchor="middle">1</text>
+            <text x="165" y="218" text-anchor="middle">4</text>
+            <text x="274" y="218" text-anchor="middle">7</text>
+            <text x="383" y="218" text-anchor="middle">10</text>
+            <text x="456" y="218" text-anchor="middle">12</text>
+          </g>
+
+          <path class="chart__line" pathLength="1" d="M56.0 130.6 L92.4 123.8 L128.7 127.2 L165.1 108.3 L201.5 113.4 L237.8 98.0 L274.2 87.6 L310.5 94.5 L346.9 75.6 L383.3 65.3 L419.6 72.2 L456.0 51.5"/>
+          <circle class="chart__dot" cx="456" cy="51.5" r="4.5"/>
+        </svg>
+        <figcaption class="cell__note">Exemplo ilustrativo, com dados fictícios.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section wrap" id="projetos" aria-labelledby="projetos-titulo">
+      <h2 id="projetos-titulo">Projetos</h2>
+      <p class="section__intro">Todo o código está no GitHub. Começo pelo trabalho com dados.</p>
+
+      <ol class="projects">
+        <li class="project">
+          <div class="project__head">
+            <h3>Ecommerce Analytics</h3>
+            <p class="status">Em andamento</p>
+          </div>
+          <div class="project__body">
+            <p>Análise exploratória de pedidos de e-commerce com Python e pandas, sobre o conjunto de dados público da Olist. Até agora: limpeza das datas, status dos pedidos e tempo de entrega.</p>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>Python</li><li>pandas</li><li>Jupyter Notebook</li>
+            </ul>
+            <p class="plinks"><a href="https://github.com/Pereira-gu/ecommerce-analytics" target="_blank" rel="noopener noreferrer">Código<span class="sr"> do Ecommerce Analytics</span></a></p>
+          </div>
+        </li>
+
+        <li class="project">
+          <div class="project__head"><h3>API Library</h3></div>
+          <div class="project__body">
+            <p>API REST de biblioteca com autenticação JWT, perfis de administrador e usuário, empréstimos transacionais e documentação Swagger.</p>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>Java 21</li><li>Spring Boot 3</li><li>Spring Security</li><li>MySQL</li><li>Docker</li>
+            </ul>
+            <p class="plinks"><a href="https://github.com/Pereira-gu/api-library" target="_blank" rel="noopener noreferrer">Código<span class="sr"> da API Library</span></a></p>
+          </div>
+        </li>
+
+        <li class="project">
+          <div class="project__head"><h3>Shortify &amp; Track</h3></div>
+          <div class="project__body">
+            <p>Encurtador de URLs que registra cliques em segundo plano e entrega métricas por navegador e dispositivo, com consultas agregadas no banco.</p>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>Java 21</li><li>Spring Boot 3</li><li>PostgreSQL</li><li>JUnit</li><li>Mockito</li>
+            </ul>
+            <p class="plinks"><a href="https://github.com/Pereira-gu/URL_Shorter" target="_blank" rel="noopener noreferrer">Código<span class="sr"> do Shortify &amp; Track</span></a></p>
+          </div>
+        </li>
+
+        <li class="project">
+          <div class="project__head"><h3>Busca Inteligente</h3></div>
+          <div class="project__body">
+            <p>Autocomplete que reduz consultas ao banco com debounce no frontend e cache-aside em Redis.</p>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>Java 21</li><li>Spring Boot 3</li><li>Redis</li>
+            </ul>
+            <p class="plinks"><a href="https://github.com/Pereira-gu/busca-inteligente" target="_blank" rel="noopener noreferrer">Código<span class="sr"> da Busca Inteligente</span></a></p>
+          </div>
+        </li>
+
+        <li class="project">
+          <div class="project__head"><h3>MyFinn</h3></div>
+          <div class="project__body">
+            <p>Gestor financeiro pessoal com gráficos, despesas recorrentes e parcelas de cartão. React no frontend e Spring Boot com JWT no backend.</p>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>React</li><li>Spring Boot</li><li>PostgreSQL</li><li>JWT</li>
+            </ul>
+            <p class="plinks">
+              <a href="https://my-finn.vercel.app" target="_blank" rel="noopener noreferrer">Demonstração<span class="sr"> do MyFinn</span></a>
+              <a href="https://github.com/Pereira-gu/MyFinn" target="_blank" rel="noopener noreferrer">Código<span class="sr"> do MyFinn</span></a>
+            </p>
+          </div>
+        </li>
+
+        <li class="project">
+          <div class="project__head"><h3>GA.EVENT</h3></div>
+          <div class="project__body">
+            <p>Controle de presença em eventos com QR Code que expira em 5 minutos, cálculo de permanência e gamificação. API em Spring Boot e aplicativo Android.</p>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>Java 21</li><li>Spring Boot</li><li>PostgreSQL</li><li>Android</li>
+            </ul>
+            <p class="plinks">
+              <a href="https://github.com/Pereira-gu/ga-evento-api" target="_blank" rel="noopener noreferrer">API<span class="sr"> do GA.EVENT</span></a>
+              <a href="https://github.com/Pereira-gu/GA-evento-app" target="_blank" rel="noopener noreferrer">Aplicativo<span class="sr"> do GA.EVENT</span></a>
+            </p>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__inner">
+      <p>Gustavo Pereira, 2026</p>
+      <p><a href="https://www.linkedin.com/in/guspereira-dev/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+         &nbsp;/&nbsp;
+         <a href="mailto:dev.gustavospereira@gmail.com">dev.gustavospereira@gmail.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
