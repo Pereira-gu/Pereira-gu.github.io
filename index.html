@@ -1,177 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gustavo Pereira | Análise de dados com Python</title>
-  <meta name="description" content="Gustavo Pereira, estudante de Ciência da Computação em São Paulo. Análise de dados com Python, com backend em Java e cloud como segunda área.">
-  <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#F8F9FB">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="pt_BR">
+  <meta name="description" content="Estudo Ciência da Computação e pratico análise de dados com Python em projetos próprios. Busco minha primeira vaga júnior em dados.">
+  <meta name="theme-color" content="#F7F5EF">
   <meta property="og:title" content="Gustavo Pereira | Análise de dados com Python">
-  <meta property="og:description" content="Estudante de Ciência da Computação. Análise de dados com Python, backend em Java e cloud como segunda área.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232447D6'/%3E%3Cpath d='M6 22l6-7 5 4 9-11' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:description" content="Busco minha primeira vaga júnior em dados. Veja a análise completa de cerca de 100 mil pedidos reais de e-commerce.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
   <a class="skip" href="#conteudo">Ir para o conteúdo</a>
 
   <header class="top">
-    <div class="wrap top__inner">
-      <a class="brand" href="#inicio" aria-label="Gustavo Pereira, início">Gustavo Pereira</a>
-      <nav aria-label="Principal">
-        <ul class="nav">
-          <!-- Próximas seções a entrar aqui: Stack, Estudos, Contato -->
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="https://github.com/Pereira-gu" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/guspereira-dev/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        </ul>
-      </nav>
-    </div>
+    <a class="brand" href="#inicio">Gustavo Pereira</a>
+    <nav aria-label="Principal">
+      <a class="nav-link" href="#projetos">Projetos</a>
+      <a class="nav-link" href="https://github.com/Pereira-gu">GitHub</a>
+      <a class="btn btn-small" href="https://www.linkedin.com/in/guspereira-dev/">LinkedIn</a>
+    </nav>
   </header>
 
   <main id="conteudo">
-    <section class="hero wrap" id="inicio" aria-labelledby="titulo">
-      <div class="hero__text">
-        <p class="place">São Paulo, SP</p>
-        <h1 id="titulo">Gustavo Pereira</h1>
-        <p class="lead">Estudo Ciência da Computação e trabalho com análise de dados em Python. Também construo APIs em Java e estudo cloud.</p>
-        <p class="goal">Procuro oportunidades em dados e desenvolvimento.</p>
-
-        <div class="actions">
-          <a class="btn btn--primary" href="#projetos">Ver projetos</a>
-          <a class="btn" href="mailto:dev.gustavospereira@gmail.com">Falar comigo</a>
+    <section class="hero" id="inicio">
+      <div class="hero-text">
+        <h1>Busco minha primeira vaga júnior em dados.</h1>
+        <div class="hero-side">
+          <p>Estudo Ciência da Computação e pratico análise de dados com Python em projetos próprios. São Paulo, SP.</p>
+          <a class="btn" href="https://www.linkedin.com/in/guspereira-dev/">Chamar no LinkedIn
+            <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg>
+          </a>
         </div>
       </div>
 
-      <figure class="cell">
-        <div class="cell__code">
-          <span class="cell__prompt" aria-hidden="true">[1]:</span>
-          <code>df.groupby("semana")["pedidos"].sum().plot()</code>
+      <figure class="score" aria-labelledby="score-title">
+        <div class="score-head">
+          <h2 id="score-title">O que acontece com a nota quando a entrega atrasa</h2>
+          <div class="toggle" role="group" aria-label="Escolher grupo de pedidos">
+            <button type="button" data-group="prazo" aria-pressed="true">No prazo</button>
+            <button type="button" data-group="atraso" aria-pressed="false">Com atraso</button>
+          </div>
+          <p class="mean">Nota média <strong id="mean-value" aria-live="polite">4,29</strong></p>
         </div>
-        <svg class="chart" viewBox="0 0 480 232" role="img" aria-labelledby="chart-t chart-d">
-          <title id="chart-t">Gráfico de linha ilustrativo</title>
-          <desc id="chart-d">Pedidos por semana ao longo de 12 semanas, com tendência de alta e uma queda leve nas semanas 3, 5, 8 e 11. Os valores são fictícios.</desc>
 
-          <g class="chart__grid" aria-hidden="true">
-            <line x1="56" y1="24"  x2="456" y2="24"/>
-            <line x1="56" y1="67"  x2="456" y2="67"/>
-            <line x1="56" y1="110" x2="456" y2="110"/>
-            <line x1="56" y1="153" x2="456" y2="153"/>
-          </g>
-          <line class="chart__axis" x1="56" y1="196" x2="456" y2="196" aria-hidden="true"/>
-
-          <g class="chart__labels" aria-hidden="true">
-            <text x="44" y="28"  text-anchor="end">100</text>
-            <text x="44" y="71"  text-anchor="end">75</text>
-            <text x="44" y="114" text-anchor="end">50</text>
-            <text x="44" y="157" text-anchor="end">25</text>
-            <text x="44" y="200" text-anchor="end">0</text>
-            <text x="56"  y="218" text-anchor="middle">1</text>
-            <text x="165" y="218" text-anchor="middle">4</text>
-            <text x="274" y="218" text-anchor="middle">7</text>
-            <text x="383" y="218" text-anchor="middle">10</text>
-            <text x="456" y="218" text-anchor="middle">12</text>
-          </g>
-
-          <path class="chart__line" pathLength="1" d="M56.0 130.6 L92.4 123.8 L128.7 127.2 L165.1 108.3 L201.5 113.4 L237.8 98.0 L274.2 87.6 L310.5 94.5 L346.9 75.6 L383.3 65.3 L419.6 72.2 L456.0 51.5"/>
-          <circle class="chart__dot" cx="456" cy="51.5" r="4.5"/>
-        </svg>
-        <figcaption class="cell__note">Exemplo ilustrativo, com dados fictícios.</figcaption>
+        <div class="bars" id="bars" role="img" aria-label="Distribuição das notas de pedidos entregues no prazo: nota 1, 6,6%; nota 2, 2,6%; nota 3, 8,0%; nota 4, 20,4%; nota 5, 62,4%.">
+          <div class="col low"><span class="val">6,6%</span><i class="fill" style="--v:6.6"></i></div>
+          <div class="col low"><span class="val">2,6%</span><i class="fill" style="--v:2.6"></i></div>
+          <div class="col"><span class="val">8,0%</span><i class="fill" style="--v:8"></i></div>
+          <div class="col"><span class="val">20,4%</span><i class="fill" style="--v:20.4"></i></div>
+          <div class="col"><span class="val">62,4%</span><i class="fill" style="--v:62.4"></i></div>
+        </div>
+        <div class="axis" aria-hidden="true">
+          <span>Nota 1</span><span>Nota 2</span><span>Nota 3</span><span>Nota 4</span><span>Nota 5</span>
+        </div>
+        <figcaption>Dados reais da Olist: avaliações de 88.171 pedidos entregues no prazo e 7.661 entregues com atraso.</figcaption>
       </figure>
     </section>
 
-    <section class="section wrap" id="projetos" aria-labelledby="projetos-titulo">
-      <h2 id="projetos-titulo">Projetos</h2>
-      <p class="section__intro">Todo o código está no GitHub. Começo pelo trabalho com dados.</p>
+    <section class="case" aria-labelledby="case-title" id="projetos">
+      <div class="wrap">
+        <header class="case-head">
+          <h2 id="case-title">Ecommerce Analytics</h2>
+          <p>Análise do início ao fim de cerca de 100 mil pedidos reais de e-commerce no Brasil, de 2016 a 2018, feita com Python, pandas, matplotlib e seaborn.</p>
+          <a class="text-link" href="https://github.com/Pereira-gu/ecommerce-analytics">Ver código e notebook no GitHub
+            <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg>
+          </a>
+        </header>
 
-      <ol class="projects">
-        <li class="project">
-          <div class="project__head">
-            <h3>Ecommerce Analytics</h3>
-            <p class="status">Em andamento</p>
+        <dl class="story">
+          <div>
+            <dt>Pergunta</dt>
+            <dd>Como evoluíram as vendas, o que e onde se vende, como é a entrega e quanto ela afeta a satisfação do cliente?</dd>
           </div>
-          <div class="project__body">
-            <p>Análise exploratória de pedidos de e-commerce com Python e pandas, sobre o conjunto de dados público da Olist. Até agora: limpeza das datas, status dos pedidos e tempo de entrega.</p>
-            <ul class="tags" aria-label="Tecnologias">
-              <li>Python</li><li>pandas</li><li>Jupyter Notebook</li>
-            </ul>
-            <p class="plinks"><a href="https://github.com/Pereira-gu/ecommerce-analytics" target="_blank" rel="noopener noreferrer">Código<span class="sr"> do Ecommerce Analytics</span></a></p>
+          <div>
+            <dt>Método</dt>
+            <dd>Tratei as datas e cruzei as tabelas de pedidos, itens, clientes, produtos, pagamentos e avaliações. Quando um pedido tinha mais de uma avaliação, mantive a mais recente.</dd>
           </div>
-        </li>
+          <div>
+            <dt>Resultado</dt>
+            <dd>A receita cresceu, mas a entrega é o ponto frágil: pedidos atrasados têm nota média de 2,57, contra 4,29 dos entregues no prazo.</dd>
+          </div>
+        </dl>
 
-        <li class="project">
-          <div class="project__head"><h3>API Library</h3></div>
-          <div class="project__body">
-            <p>API REST de biblioteca com autenticação JWT, perfis de administrador e usuário, empréstimos transacionais e documentação Swagger.</p>
-            <ul class="tags" aria-label="Tecnologias">
-              <li>Java 21</li><li>Spring Boot 3</li><li>Spring Security</li><li>MySQL</li><li>Docker</li>
-            </ul>
-            <p class="plinks"><a href="https://github.com/Pereira-gu/api-library" target="_blank" rel="noopener noreferrer">Código<span class="sr"> da API Library</span></a></p>
-          </div>
-        </li>
+        <figure class="line">
+          <h3>De janeiro a agosto, a receita média mensal cresceu 141% de 2017 para 2018</h3>
+          <p class="readout" id="readout" aria-live="polite"></p>
+          <div class="line-chart" id="line-chart"></div>
+          <table class="data-table">
+            <caption>Receita mensal, em milhares de reais</caption>
+            <thead><tr><th scope="col">Mês</th><th scope="col">R$ mil</th></tr></thead>
+            <tbody id="line-table"></tbody>
+          </table>
+          <figcaption>O pico de novembro de 2017 coincide com a provável Black Friday. A receita considera só o preço dos itens, sem frete, e apenas pedidos entregues.</figcaption>
+        </figure>
 
-        <li class="project">
-          <div class="project__head"><h3>Shortify &amp; Track</h3></div>
-          <div class="project__body">
+        <h3 class="findings-title">O que mais a análise mostrou</h3>
+        <table class="findings">
+          <thead class="sr-only"><tr><th scope="col">Resultado</th><th scope="col">Indicador</th><th scope="col">Leitura</th></tr></thead>
+          <tbody>
+            <tr><td class="num">8,1%</td><th scope="row">dos pedidos chegaram depois do prazo estimado</th><td>54,1% deles receberam nota 1 ou 2, contra 9,2% dos entregues no prazo.</td></tr>
+            <tr><td class="num">12 dias</td><th scope="row">é o prazo médio de entrega</th><td>SP recebe em cerca de 8 dias. PA e AM passam de 23.</td></tr>
+            <tr><td class="num">38,3%</td><th scope="row">da receita vem de São Paulo</th><td>SP, RJ e MG juntos passam de 63%.</td></tr>
+            <tr><td class="num">75%</td><th scope="row">dos pedidos usam cartão de crédito</th><td>67% desses pagamentos são parcelados. O boleto vem em seguida, com cerca de 20%.</td></tr>
+            <tr><td class="num">3,0%</td><th scope="row">dos clientes compraram mais de uma vez</th><td>A retenção é baixa, o que abre espaço para ações de recompra.</td></tr>
+          </tbody>
+        </table>
+        <p class="note">Limitações: a base cobre de 2016 a 2018, e os meses das pontas têm poucos pedidos, por isso ficam fora do gráfico mensal.</p>
+      </div>
+    </section>
+
+    <section class="more" aria-labelledby="more-title">
+      <div class="wrap">
+        <div class="section-intro">
+          <h2 id="more-title">Também sei construir os sistemas que geram os dados</h2>
+          <p>Projetos de backend e aplicações completas. Todo o código está no GitHub.</p>
+        </div>
+        <ul class="projects">
+          <li>
+            <h3>MyFinn</h3>
+            <p>Gestor financeiro pessoal com gráficos, despesas recorrentes e parcelas de cartão.</p>
+            <p class="stack">React, Spring Boot, PostgreSQL, JWT</p>
+            <p class="links"><a href="https://github.com/Pereira-gu/MyFinn">Código</a></p>
+          </li>
+          <li>
+            <h3>Shortify &amp; Track</h3>
             <p>Encurtador de URLs que registra cliques em segundo plano e entrega métricas por navegador e dispositivo, com consultas agregadas no banco.</p>
-            <ul class="tags" aria-label="Tecnologias">
-              <li>Java 21</li><li>Spring Boot 3</li><li>PostgreSQL</li><li>JUnit</li><li>Mockito</li>
-            </ul>
-            <p class="plinks"><a href="https://github.com/Pereira-gu/URL_Shorter" target="_blank" rel="noopener noreferrer">Código<span class="sr"> do Shortify &amp; Track</span></a></p>
-          </div>
-        </li>
-
-        <li class="project">
-          <div class="project__head"><h3>Busca Inteligente</h3></div>
-          <div class="project__body">
+            <p class="stack">Java 21, Spring Boot 3, PostgreSQL, JUnit, Mockito</p>
+            <p class="links"><a href="https://github.com/Pereira-gu/URL_Shorter">Código</a></p>
+          </li>
+          <li>
+            <h3>API Library</h3>
+            <p>API REST de biblioteca com autenticação JWT, perfis de administrador e usuário, empréstimos transacionais e documentação Swagger.</p>
+            <p class="stack">Java 21, Spring Boot 3, Spring Security, MySQL, Docker</p>
+            <p class="links"><a href="https://github.com/Pereira-gu/api-library">Código</a></p>
+          </li>
+          <li>
+            <h3>Busca Inteligente</h3>
             <p>Autocomplete que reduz consultas ao banco com debounce no frontend e cache-aside em Redis.</p>
-            <ul class="tags" aria-label="Tecnologias">
-              <li>Java 21</li><li>Spring Boot 3</li><li>Redis</li>
-            </ul>
-            <p class="plinks"><a href="https://github.com/Pereira-gu/busca-inteligente" target="_blank" rel="noopener noreferrer">Código<span class="sr"> da Busca Inteligente</span></a></p>
-          </div>
-        </li>
+            <p class="stack">Java 21, Spring Boot 3, Redis</p>
+            <p class="links"><a href="https://github.com/Pereira-gu/busca-inteligente">Código</a></p>
+          </li>
+          <li>
+            <h3>GA.EVENT</h3>
+            <p>Controle de presença em eventos com QR Code que expira em 5 minutos, cálculo de permanência e gamificação.</p>
+            <p class="stack">Java 21, Spring Boot, PostgreSQL, Android</p>
+            <p class="links"><a href="https://github.com/Pereira-gu/ga-evento-api">API</a><a href="https://github.com/Pereira-gu/GA-evento-app">Aplicativo</a></p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-        <li class="project">
-          <div class="project__head"><h3>MyFinn</h3></div>
-          <div class="project__body">
-            <p>Gestor financeiro pessoal com gráficos, despesas recorrentes e parcelas de cartão. React no frontend e Spring Boot com JWT no backend.</p>
-            <ul class="tags" aria-label="Tecnologias">
-              <li>React</li><li>Spring Boot</li><li>PostgreSQL</li><li>JWT</li>
-            </ul>
-            <p class="plinks">
-              <a href="https://my-finn.vercel.app" target="_blank" rel="noopener noreferrer">Demonstração<span class="sr"> do MyFinn</span></a>
-              <a href="https://github.com/Pereira-gu/MyFinn" target="_blank" rel="noopener noreferrer">Código<span class="sr"> do MyFinn</span></a>
-            </p>
-          </div>
-        </li>
+    <section class="about" aria-label="Sobre e ferramentas">
+      <div class="wrap about-grid">
+        <div>
+          <h2>Sobre e formação</h2>
+          <p>Curso Ciência da Computação e moro em São Paulo. Meu foco é análise de dados com Python.</p>
+          <p>Também construo APIs em Java e estudo cloud.</p>
+        </div>
+        <div>
+          <h2>Ferramentas</h2>
+          <dl class="tools">
+            <div><dt>Análise de dados</dt><dd>Python, pandas, matplotlib, seaborn, Jupyter Notebook</dd></div>
+            <div><dt>Bancos de dados</dt><dd>PostgreSQL, MySQL, Redis</dd></div>
+            <div><dt>Backend</dt><dd>Java 21, Spring Boot, Spring Security, JUnit, Mockito, Docker</dd></div>
+            <div><dt>Frontend e mobile</dt><dd>React, Android</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
 
-        <li class="project">
-          <div class="project__head"><h3>GA.EVENT</h3></div>
-          <div class="project__body">
-            <p>Controle de presença em eventos com QR Code que expira em 5 minutos, cálculo de permanência e gamificação. API em Spring Boot e aplicativo Android.</p>
-            <ul class="tags" aria-label="Tecnologias">
-              <li>Java 21</li><li>Spring Boot</li><li>PostgreSQL</li><li>Android</li>
-            </ul>
-            <p class="plinks">
-              <a href="https://github.com/Pereira-gu/ga-evento-api" target="_blank" rel="noopener noreferrer">API<span class="sr"> do GA.EVENT</span></a>
-              <a href="https://github.com/Pereira-gu/GA-evento-app" target="_blank" rel="noopener noreferrer">Aplicativo<span class="sr"> do GA.EVENT</span></a>
-            </p>
-          </div>
-        </li>
-      </ol>
+    <section class="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title">Tem uma vaga júnior em dados? Vamos conversar.</h2>
+        <a class="btn btn-invert" href="https://www.linkedin.com/in/guspereira-dev/">Chamar no LinkedIn
+          <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg>
+        </a>
+        <p class="contact-alt"><a href="mailto:dev.gustavospereira@gmail.com">dev.gustavospereira@gmail.com</a><a href="https://github.com/Pereira-gu">GitHub</a></p>
+      </div>
     </section>
   </main>
 
-  <footer class="foot">
-    <div class="wrap foot__inner">
-      <p>Gustavo Pereira, 2026</p>
-      <p><a href="https://www.linkedin.com/in/guspereira-dev/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-         &nbsp;/&nbsp;
-         <a href="mailto:dev.gustavospereira@gmail.com">dev.gustavospereira@gmail.com</a></p>
-    </div>
-  </footer>
+  <footer class="foot">Gustavo Pereira, 2026</footer>
+  <script src="main.js" defer></script>
 </body>
 </html>
