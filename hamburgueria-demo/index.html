@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brasaria 77 · Hamburgueria de bairro (demonstração)</title>
+<meta name="description" content="Site de demonstração de uma hamburgueria fictícia: cardápio com foto e preço e pedido direto pelo WhatsApp.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#151210">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#151210;--card:#201b18;--line:#342c27;--cream:#f5ecdf;--muted:#b9ab9b;--fire:#e2481e;--mustard:#f2b33d;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font:16px/1.5 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;padding-bottom:96px}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;cursor:pointer;border:0}
+.demo{background:var(--mustard);color:#1b1410;font-size:12.5px;font-weight:600;text-align:center;padding:7px 14px}
+.demo a{font-weight:800}
+header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:rgba(21,18,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font-family:Anton,Impact,sans-serif;font-size:26px;letter-spacing:.5px;line-height:1}
+.logo b{color:var(--fire);font-weight:400}
+.aberto{font-size:12px;font-weight:700;color:#7fdc8f;display:flex;align-items:center;gap:6px}
+.aberto::before{content:"";width:8px;height:8px;border-radius:50%;background:#53d36a;box-shadow:0 0 0 4px rgba(83,211,106,.18)}
+.hero{position:relative;min-height:640px;display:flex;flex-direction:column;justify-content:flex-end;padding:28px 20px 30px;overflow:hidden}
+.hero img{position:absolute;left:0;right:0;top:0;width:100%;height:68%;object-fit:cover;object-position:center 45%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,18,16,0) 30%,rgba(21,18,16,.85) 58%,var(--bg) 70%)}
+.hero>*{position:relative;z-index:1}
+.selo{display:inline-block;align-self:flex-start;background:var(--fire);color:#fff;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 11px;border-radius:999px;margin-bottom:14px}
+.hero h1{text-shadow:0 2px 18px rgba(0,0,0,.55);font-family:Anton,Impact,sans-serif;font-weight:400;font-size:58px;line-height:.95;text-transform:uppercase;letter-spacing:.5px}
+.hero h1 span{color:var(--mustard)}
+.hero p{color:#e4d8c8;margin:12px 0 20px;max-width:30ch}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:14px;font-weight:800;text-decoration:none}
+.btn.main{background:var(--fire);color:#fff}
+.btn.ghost{background:rgba(245,236,223,.1);border:1px solid rgba(245,236,223,.25)}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 18px 8px}
+.info div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 10px;text-align:center}
+.info b{display:block;font-size:15px}
+.info small{color:var(--muted);font-size:11.5px}
+section{padding:30px 18px 6px;scroll-margin-top:64px}
+.cat{scroll-margin-top:70px}
+h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:36px;text-transform:uppercase;line-height:1;margin-bottom:4px}
+.sub{color:var(--muted);font-size:14px;margin-bottom:16px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:14px;scrollbar-width:none}
+.tabs a{flex:none;text-decoration:none;font-size:14px;font-weight:700;padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.tabs a.on{background:var(--cream);color:#1b1410;border-color:var(--cream)}
+.cat{font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mustard);margin:22px 0 10px}
+.item{display:grid;grid-template-columns:104px 1fr;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:10px;margin-bottom:10px}
+.item img{width:104px;height:104px;object-fit:cover;border-radius:12px}
+.item h3{font-size:17px;font-weight:800;line-height:1.2}
+.item p{color:var(--muted);font-size:13px;line-height:1.35;margin:4px 0 8px}
+.item .row{display:flex;align-items:center;justify-content:space-between}
+.preco{font-weight:800;font-size:17px;color:var(--mustard)}
+.add{width:38px;height:38px;border-radius:12px;background:var(--fire);color:#fff;font-size:24px;font-weight:700;line-height:1;display:grid;place-items:center;transition:transform .15s}
+.add:active{transform:scale(.9)}
+.add.qtd{width:auto;padding:0 12px;font-size:15px}
+.tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;background:rgba(242,179,61,.16);color:var(--mustard);padding:2px 7px;border-radius:6px;margin-left:6px;vertical-align:2px}
+.como{display:grid;gap:10px}
+.passo{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px}
+.passo i{flex:none;font-style:normal;font-family:Anton,Impact,sans-serif;font-size:26px;color:var(--fire);width:28px;line-height:1.1}
+.passo b{display:block}
+.passo span{color:var(--muted);font-size:14px}
+.onde{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;gap:8px;font-size:15px}
+.onde span{color:var(--muted)}
+footer{padding:28px 18px 10px;color:var(--muted);font-size:12.5px;display:grid;gap:8px}
+footer a{color:var(--cream)}
+.bag{position:fixed;left:14px;right:14px;bottom:14px;z-index:30;display:flex;align-items:center;justify-content:space-between;background:var(--fire);color:#fff;border-radius:16px;padding:15px 18px;font-weight:800;box-shadow:0 12px 30px rgba(0,0,0,.45);transform:translateY(140%);transition:transform .35s cubic-bezier(.2,.9,.3,1.2)}
+.bag.on{transform:none}
+.bag .n{background:#fff;color:var(--fire);border-radius:8px;padding:1px 8px;margin-right:8px}
+.veu{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .25s}
+.veu.on{opacity:1;pointer-events:auto}
+.gaveta{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#1c1714;border-radius:22px 22px 0 0;border-top:1px solid var(--line);padding:10px 18px 22px;max-height:88vh;overflow:auto;transform:translateY(105%);transition:transform .35s cubic-bezier(.2,.9,.3,1)}
+.gaveta.on{transform:none}
+.alca{width:44px;height:5px;border-radius:9px;background:#4a3f38;margin:0 auto 14px}
+.gaveta h2{font-size:30px}
+.linha{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.linha small{color:var(--muted)}
+.total{display:flex;justify-content:space-between;font-weight:800;font-size:19px;margin:14px 0 16px}
+.op{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.op button{padding:12px;border-radius:12px;background:var(--card);border:1px solid var(--line);color:var(--cream);font-weight:700}
+.op button.on{border-color:var(--mustard);background:rgba(242,179,61,.12);color:var(--mustard)}
+label{display:block;font-size:13px;font-weight:700;color:var(--muted);margin:10px 0 6px}
+input{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--cream);font:inherit;font-size:16px}
+.zap{width:100%;margin-top:16px;padding:16px;border-radius:14px;background:#25d366;color:#0b2914;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;gap:10px}
+.nota{color:var(--muted);font-size:12px;text-align:center;margin-top:10px}
+@media (min-width:760px){body{max-width:560px;margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line)}.bag,.gaveta{max-width:560px;margin:0 auto}.bag{left:50%;right:auto;width:530px;margin-left:-265px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="demo">Site de demonstração. A Brasaria 77 não existe. <a href="https://pereira-gu.github.io/sites/">Quero um igual</a></div>
+<header>
+  <div class="logo">BRASARIA <b>77</b></div>
+  <div class="aberto">Aberto até 23h</div>
+</header>
+
+<main>
+<div class="hero">
+  <img src="img/hero.jpg" alt="Hambúrguer duplo com queijo derretido">
+  <span class="selo">Smash na chapa</span>
+  <h1>Burger de bairro, <span>feito na hora.</span></h1>
+  <p>Escolhe no cardápio, monta o pedido e manda pelo WhatsApp. A gente confirma e já começa a chapa.</p>
+  <div class="cta">
+    <a class="btn main" href="#cardapio">Ver cardápio</a>
+    <a class="btn ghost" href="#onde">Onde estamos</a>
+  </div>
+</div>
+
+<div class="info">
+  <div><b>30 a 45 min</b><small>entrega</small></div>
+  <div><b>R$ 6</b><small>taxa no bairro</small></div>
+  <div><b>Ter a dom</b><small>18h às 23h</small></div>
+</div>
+
+<section id="cardapio">
+  <h2>Cardápio</h2>
+  <p class="sub">Preços fictícios, só para a demonstração.</p>
+  <nav class="tabs" aria-label="Categorias">
+    <a href="#burgers" class="on">Burgers</a><a href="#combos">Combos</a><a href="#acomp">Acompanhamentos</a>
+  </nav>
+  <div id="lista"></div>
+</section>
+
+<section>
+  <h2>Como pedir</h2>
+  <p class="sub">Três passos, sem ligar e sem esperar alguém responder.</p>
+  <div class="como">
+    <div class="passo"><i>1</i><div><b>Escolhe no cardápio</b><span>Toca no + de cada item.</span></div></div>
+    <div class="passo"><i>2</i><div><b>Confere o pedido</b><span>Entrega ou retirada, nome e endereço.</span></div></div>
+    <div class="passo"><i>3</i><div><b>Manda no WhatsApp</b><span>A mensagem já vai pronta, com tudo e o total.</span></div></div>
+  </div>
+</section>
+
+<section id="onde">
+  <h2>Onde estamos</h2>
+  <div class="onde">
+    <div>Rua Fictícia, 77 · Vila Exemplo, São Paulo<br><span>(endereço de demonstração)</span></div>
+    <div>Terça a domingo, das 18h às 23h</div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div>Projeto de demonstração criado por <a href="https://pereira-gu.github.io/sites/">Gustavo Pereira · Sites</a>. O nome, os preços e o endereço são fictícios.</div>
+  <div>Fotos ilustrativas do <a href="https://unsplash.com">Unsplash</a>, usadas sob a licença Unsplash.</div>
+</footer>
+
+<button class="bag" id="bag" aria-live="polite"><span><span class="n" id="bagN">0</span>Ver pedido</span><span id="bagT">R$ 0</span></button>
+<div class="veu" id="veu"></div>
+<div class="gaveta" id="gaveta" role="dialog" aria-label="Seu pedido">
+  <div class="alca"></div>
+  <h2>Seu pedido</h2>
+  <div id="linhas"></div>
+  <div class="total"><span>Total</span><span id="tot">R$ 0</span></div>
+  <div class="op"><button class="on" data-op="Entrega">Entrega</button><button data-op="Retirada">Retirada</button></div>
+  <label for="nome">Seu nome</label><input id="nome" autocomplete="name" placeholder="Como te chamamos?">
+  <div id="endBox"><label for="end">Endereço</label><input id="end" autocomplete="street-address" placeholder="Rua, número e complemento"></div>
+  <button class="zap" id="zap"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>Enviar pedido no WhatsApp</button>
+  <p class="nota">Demonstração: o WhatsApp abre com a mensagem pronta, sem número de loja real.</p>
+</div>
+
+<script>
+const MENU=[
+ {cat:'Burgers',id:'burgers',itens:[
+  {k:'classico',n:'Clássico 77',d:'Blend de 150 g, cheddar, alface, tomate e molho da casa.',p:29},
+  {k:'duplo',n:'Duplo Smash',d:'Dois smash de 90 g, cheddar duplo, cebola na chapa e picles.',p:36,t:'Mais pedido'},
+  {k:'bacon',n:'Bacon na Brasa',d:'Blend de 150 g, bacon crocante, queijo prato e maionese defumada.',p:38},
+  {k:'frango',n:'Frango Crocante',d:'Sobrecoxa empanada, salada de repolho e molho picante leve.',p:31}]},
+ {cat:'Combos',id:'combos',itens:[
+  {k:'combo',n:'Combo da Casa',d:'Clássico 77, fritas média e refri lata.',p:42,t:'Economiza'}]},
+ {cat:'Acompanhamentos',id:'acomp',itens:[
+  {k:'fritas',n:'Fritas',d:'Porção média, crocante, com sal na hora.',p:14},
+  {k:'parmesao',n:'Fritas com parmesão',d:'Fritas, parmesão ralado e salsinha.',p:19}]}];
+const R=v=>'R$ '+v.toFixed(0);
+const bag={};
+const lista=document.getElementById('lista');
+lista.innerHTML=MENU.map(c=>`<h3 class="cat" id="${c.id}">${c.cat}</h3>`+c.itens.map(i=>`<article class="item" data-k="${i.k}"><img src="img/${i.k}.jpg" alt="${i.n}" loading="lazy" width="104" height="104"><div><h3>${i.n}${i.t?`<span class="tag">${i.t}</span>`:''}</h3><p>${i.d}</p><div class="row"><span class="preco">${R(i.p)}</span><button class="add" data-add="${i.k}" aria-label="Adicionar ${i.n}">+</button></div></div></article>`).join('')).join('');
+const ALL=Object.fromEntries(MENU.flatMap(c=>c.itens).map(i=>[i.k,i]));
+const $=id=>document.getElementById(id);
+let op='Entrega';
+function render(){
+  const ks=Object.keys(bag).filter(k=>bag[k]>0);
+  const n=ks.reduce((a,k)=>a+bag[k],0), sub=ks.reduce((a,k)=>a+bag[k]*ALL[k].p,0), tx=op==='Entrega'&&n?6:0;
+  $('bagN').textContent=n;$('bagT').textContent=R(sub+tx);$('bag').classList.toggle('on',n>0);
+  document.querySelectorAll('[data-add]').forEach(b=>{const q=bag[b.dataset.add]||0;b.textContent=q?q+' no pedido':'+';b.classList.toggle('qtd',q>0)});
+  $('linhas').innerHTML=ks.map(k=>`<div class="linha"><span>${bag[k]}x ${ALL[k].n}</span><span>${R(bag[k]*ALL[k].p)}</span></div>`).join('')+(tx?`<div class="linha"><small>Taxa de entrega</small><small>${R(tx)}</small></div>`:'');
+  $('tot').textContent=R(sub+tx);$('endBox').style.display=op==='Entrega'?'':'none';
+  return {ks,sub,tx};
+}
+lista.addEventListener('click',e=>{const b=e.target.closest('[data-add]');if(!b)return;bag[b.dataset.add]=(bag[b.dataset.add]||0)+1;render()});
+const abrir=v=>{$('gaveta').classList.toggle('on',v);$('veu').classList.toggle('on',v)};
+$('bag').onclick=()=>abrir(true);$('veu').onclick=()=>abrir(false);
+document.querySelectorAll('[data-op]').forEach(b=>b.onclick=()=>{op=b.dataset.op;document.querySelectorAll('[data-op]').forEach(x=>x.classList.toggle('on',x===b));render()});
+document.querySelectorAll('.tabs a').forEach(a=>a.addEventListener('click',()=>{document.querySelectorAll('.tabs a').forEach(x=>x.classList.toggle('on',x===a))}));
+$('zap').onclick=()=>{
+  const {ks,sub,tx}=render();if(!ks.length)return;
+  const nome=$('nome').value.trim()||'(seu nome)', end=$('end').value.trim();
+  const msg=`Oi, Brasaria 77! Quero fazer um pedido:\n`+ks.map(k=>`• ${bag[k]}x ${ALL[k].n} (${R(bag[k]*ALL[k].p)})`).join('\n')+`\n\n${op}${op==='Entrega'&&end?': '+end:''}\nTotal: ${R(sub+tx)}\nNome: ${nome}`;
+  window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank','noopener');
+};
+render();
+</script>
+</body>
+</html>
